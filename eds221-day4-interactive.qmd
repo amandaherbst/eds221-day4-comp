@@ -74,3 +74,41 @@ Print and return statements
 Print: "show me"
 
 return: "store this so i can use it later"
+
+## Functions with conditionals
+
+```{r}
+calculate_animal_age <- function(species, age_human_yrs) {
+  if (species == "dog") {
+    age_human_yrs * 7
+  } else if (species == "goat") {
+    age_human_yrs * 4.7
+  } else {
+    print("Please enter dog or goat")
+  }
+}
+```
+
+```{r}
+calculate_animal_age(species = "dog", age_human_yrs = 10)
+
+calculate_animal_age(species = "goat", age_human_yrs = 4)
+
+calculate_animal_age(species = "whale", age_human_yrs = 10)
+```
+
+Write a function that, given temperature in Kelvin, if a user selects "metric" for the scale, then return degrees celcisus, or if they select "english" then return degrees in Fahrenheit.
+
+```{r}
+convert_temp_from_K <- function(scale, temp_K) {
+  if (scale == "metric") {
+    temp_K - 273.15
+  } else if (scale == "english") {
+    (temp_K - 273.15) * (9 / 5) + 32
+  }
+}
+```
+
+```{r}
+convert_temp_from_K(scale = "english", temp_K = 400)
+```
